@@ -32,23 +32,81 @@ namespace WindowsFormsApplication1
 
         public void addrecord()
         {
-            String stringconn = "Data Source=localhost; userid='root'; password=''; initial Catalog=hotelsystem";
-            MySqlConnection sqlconn = new MySqlConnection(stringconn);
-            MySqlCommand sqlcomm = new MySqlCommand();
+            String id = EmpidTB.Text;
+            String name = EmpnameTB.Text;
+            String position = EmppositionCB.Text;
+            String status = CivilstatusCB.Text;
+            String gender = GenderCB.Text;
+            String age = AgeNUD.Text;
+            String address = AddressTB.Text;
+            String email = EmailTB.Text;
+            String contactNo = ContactnoTB.Text;
+            String rname = RnameTB.Text;
+            String rcontactNo = RcontactnoTB.Text;
+            String relation = RelationTB.Text;
+            String query = "SELECT EmployeeName FROM employeerecord WHERE EmployeeName ='" + EmpnameTB.Text + "'";
 
-            sqlconn.Open();
-            sqlcomm.CommandText = "INSERT INTO employeerecord VALUES('" + EmpidTB.Text + "','" + EmpnameTB.Text + "','" + EmppositionCB.Text + 
-                "','" + CivilstatusCB.Text + "','" + GenderCB.Text + "','" + AgeNUD.Text + "','" + AddressTB.Text + "','" + EmailTB.Text + 
-                "','" + ContactnoTB.Text + "','" + RnameTB.Text + "','" + RcontactnoTB.Text + "','" + RelationTB.Text + "','";
-            sqlcomm.CommandType = CommandType.Text;
-            sqlcomm.Connection = sqlconn;
-            sqlcomm.ExecuteNonQuery();
-            sqlconn.Close();
-            MessageBox.Show("Record Saved!");
-            reset();
-
+            if (crud.isExistingRecord(stringconn, query))
+            {
+                MessageBox.Show("This record exists already");
+            }
+            else
+            {
+                query = "INSERT INTO employeerecord VALUES('" + id + "','" + name + "','" + position +
+                "','" + status + "','" + gender + "','" + age + "','" + address + "','" + email +
+                "','" + contactNo + "','" + rname + "','" + rcontactNo + "','" + relation + "','";
+                String message = "Record Added!";
+                crud.addRecord(stringconn, query, message);
+                clearAllText(this);
+            }
         }
-
+        private void editRecord()
+        {
+            String id = EmpidTB.Text;
+            String name = EmpnameTB.Text;
+            String position = EmppositionCB.Text;
+            String status = CivilstatusCB.Text;
+            String gender = GenderCB.Text;
+            String age = AgeNUD.Text;
+            String address = AddressTB.Text;
+            String email = EmailTB.Text;
+            String contactNo = ContactnoTB.Text;
+            String rname = RnameTB.Text;
+            String rcontactNo = RcontactnoTB.Text;
+            String relation = RelationTB.Text;
+            String empName = EmpnameTB.Text;
+            String query = "SELECT * FROM employeerecord WHERE EmployeeName = '" + empName + "'";
+            if (crud.isExistingRecord(stringconn, query))
+            {
+                query = "UPDATE employeerecord SET EmployeeID = '" + id + "', EmployeePosition = '" + position +
+                        "', Status = '" + status + "', Gender = '" + gender + "', Age = '" + age +
+                        "', Address = '" + address + "', Email = '" + email + "', ContactNo = '" + contactNo +
+                        "', RName = '" + rname + "', RContact = '" + rcontactNo + "', Relation = '" + relation + "'";
+                crud.addRecord(stringconn, query, "Record Updated");
+                displayRecordsInDGV();
+                clearAllText(this);
+            }
+            else
+            {
+                MessageBox.Show("Enter a valid username");
+            }
+        }
+        private void deleteRecord()
+        {
+            String name = EmpnameTB.Text;
+            String query = "SELECT * FROM employeerecord WHERE EmployeeName='" + name + "'";
+            if (crud.isExistingRecord(stringconn, query))
+            {
+                query = "DELETE FROM employeerecord WHERE EmployeeName='" + name + "'";
+                crud.deleteRecord(stringconn, query, "Record Deleted!");
+                displayRecordsInDGV();
+                clearAllText(this);
+            }
+            else
+            {
+                MessageBox.Show("Username doesn't exist");
+            }
+        }
         public void displayRecordsInDGV()
         {
             String query = "SELECT * FROM employeerecord";
@@ -64,26 +122,16 @@ namespace WindowsFormsApplication1
             sqlconn.Close();
         }
 
-        public void reset()
+        public void clearAllText(Control con)
         {
-            EmpidTB.Clear();
-            EmpnameTB.Clear();
-            EmppositionCB.Text = "";
-            CivilstatusCB.Text = "";
-            GenderCB.Text = "";
-            AgeNUD.ResetText();
-            AddressTB.Clear();
-            EmailTB.Clear();
-            ContactnoTB.Clear();
-            RnameTB.Clear();
-            RcontactnoTB.Clear();
-            RelationTB.Clear();
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Clear();
+                else
+                    clearAllText(c);
+            }
         }
-        public void opensesame()
-        {
- 
-        }
-
 
         private void AddB_Click(object sender, EventArgs e)
         {

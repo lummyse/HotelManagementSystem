@@ -40,14 +40,16 @@ namespace WindowsFormsApplication1
             ClosePrevChildForm();
             CustomerRecord customerrecord = new CustomerRecord();
             customerrecord.MdiParent = this;
+            customerrecord.Size = this.Size;
             customerrecord.Show();
         }
 
         private void EmployeeTS_Click(object sender, EventArgs e)
         {
             ClosePrevChildForm();
-            UserAccounts employeerecord = new UserAccounts();
+            EmployeeRecord employeerecord = new EmployeeRecord();
             employeerecord.MdiParent = this;
+            employeerecord.Size = this.Size;
             employeerecord.Show();
             
         }
@@ -64,6 +66,7 @@ namespace WindowsFormsApplication1
             ClosePrevChildForm();
             Rooms room = new Rooms();
             room.MdiParent = this;
+            room.Size = this.Size;
             room.Show();
             
         }
@@ -73,6 +76,7 @@ namespace WindowsFormsApplication1
             ClosePrevChildForm();
             CheckIn checkin = new CheckIn();
             checkin.MdiParent = this;
+            checkin.Size = this.Size;
             checkin.Show();
             
         }

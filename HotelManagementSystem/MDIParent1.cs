@@ -18,6 +18,9 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+        #region VARIABLES
+        Login login = new Login();
+        #endregion
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -82,6 +85,17 @@ namespace WindowsFormsApplication1
             employeeAccounts.MdiParent = this;
             employeeAccounts.Size = this.Size;
             employeeAccounts.Show();
+        }
+
+        private void MDIParent1_Load(object sender, EventArgs e)
+        {
+            if (!login.adminPriviledges)
+            {
+                administratorToolStripMenuItem.Visible = false;
+                EmployeeTS.Enabled = false;
+                InventoryTS.Enabled = false;
+                setRoomPriceToolStripMenuItem.Enabled = false;
+            }
         }
     }
 }

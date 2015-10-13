@@ -38,7 +38,6 @@
             this.ExitTS = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.CheckinTS = new System.Windows.Forms.ToolStripMenuItem();
-            this.BookingTS = new System.Windows.Forms.ToolStripMenuItem();
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.CustomerTS = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,23 +46,16 @@
             this.utilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.setRoomPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roomInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeUsernamePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeAccountsTS = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.LogoutTSB = new System.Windows.Forms.ToolStripButton();
             this.ExitTSB = new System.Windows.Forms.ToolStripButton();
@@ -81,7 +73,6 @@
             this.editMenu,
             this.viewMenu,
             this.utilityToolStripMenuItem,
-            this.securityToolStripMenuItem,
             this.reportToolStripMenuItem,
             this.administratorToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -134,7 +125,6 @@
             // 
             this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CheckinTS,
-            this.BookingTS,
             this.cutToolStripMenuItem});
             this.editMenu.Name = "editMenu";
             this.editMenu.Size = new System.Drawing.Size(81, 20);
@@ -147,13 +137,6 @@
             this.CheckinTS.Size = new System.Drawing.Size(130, 22);
             this.CheckinTS.Text = "&Check In";
             this.CheckinTS.Click += new System.EventHandler(this.CheckinTS_Click);
-            // 
-            // BookingTS
-            // 
-            this.BookingTS.ImageTransparentColor = System.Drawing.Color.Black;
-            this.BookingTS.Name = "BookingTS";
-            this.BookingTS.Size = new System.Drawing.Size(130, 22);
-            this.BookingTS.Text = "&Booking";
             // 
             // cutToolStripMenuItem
             // 
@@ -196,8 +179,7 @@
             // 
             this.utilityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
-            this.setRoomPriceToolStripMenuItem,
-            this.roomInformationToolStripMenuItem});
+            this.setRoomPriceToolStripMenuItem});
             this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
             this.utilityToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.utilityToolStripMenuItem.Text = "&Utility";
@@ -214,38 +196,10 @@
             this.setRoomPriceToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.setRoomPriceToolStripMenuItem.Text = "&Set Room Price";
             // 
-            // roomInformationToolStripMenuItem
-            // 
-            this.roomInformationToolStripMenuItem.Name = "roomInformationToolStripMenuItem";
-            this.roomInformationToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.roomInformationToolStripMenuItem.Text = "&Room Information";
-            // 
-            // securityToolStripMenuItem
-            // 
-            this.securityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3,
-            this.changeUsernamePasswordToolStripMenuItem});
-            this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
-            this.securityToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.securityToolStripMenuItem.Text = "&Security";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(226, 22);
-            this.toolStripMenuItem3.Text = "&Set Up User";
-            // 
-            // changeUsernamePasswordToolStripMenuItem
-            // 
-            this.changeUsernamePasswordToolStripMenuItem.Name = "changeUsernamePasswordToolStripMenuItem";
-            this.changeUsernamePasswordToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.changeUsernamePasswordToolStripMenuItem.Text = "&Change Username/Password";
-            // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkInToolStripMenuItem,
-            this.bookingToolStripMenuItem,
             this.checkOutToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
@@ -254,19 +208,13 @@
             // checkInToolStripMenuItem
             // 
             this.checkInToolStripMenuItem.Name = "checkInToolStripMenuItem";
-            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.checkInToolStripMenuItem.Text = "Check In";
-            // 
-            // bookingToolStripMenuItem
-            // 
-            this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
-            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.bookingToolStripMenuItem.Text = "Booking";
             // 
             // checkOutToolStripMenuItem
             // 
             this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.checkOutToolStripMenuItem.Text = "Check Out";
             // 
             // administratorToolStripMenuItem
@@ -288,11 +236,9 @@
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.toolStripButton2,
             this.toolStripButton3,
             this.toolStripSeparator1,
             this.toolStripButton4,
-            this.toolStripButton5,
             this.toolStripSeparator2,
             this.LogoutTSB,
             this.ExitTSB,
@@ -311,13 +257,6 @@
             this.toolStripButton1.Text = "Check In";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.CheckinTS_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(55, 22);
-            this.toolStripButton2.Text = "Booking";
             // 
             // toolStripButton3
             // 
@@ -342,15 +281,6 @@
             this.toolStripButton4.Size = new System.Drawing.Size(88, 22);
             this.toolStripButton4.Text = "View All Room";
             this.toolStripButton4.Click += new System.EventHandler(this.RoomTS_Click);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(71, 22);
-            this.toolStripButton5.Text = "Set Up User";
             // 
             // toolStripSeparator2
             // 
@@ -404,6 +334,7 @@
             this.Name = "MDIParent1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.MDIParent1_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -424,30 +355,22 @@
         private System.Windows.Forms.ToolStripMenuItem ExitTS;
         private System.Windows.Forms.ToolStripMenuItem editMenu;
         private System.Windows.Forms.ToolStripMenuItem CheckinTS;
-        private System.Windows.Forms.ToolStripMenuItem BookingTS;
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewMenu;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem CustomerTS;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripMenuItem EmployeeTS;
         private System.Windows.Forms.ToolStripMenuItem InventoryTS;
         private System.Windows.Forms.ToolStripMenuItem utilityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem setRoomPriceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem roomInformationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem securityToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem changeUsernamePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkInToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton LogoutTSB;
         private System.Windows.Forms.ToolStripButton ExitTSB;

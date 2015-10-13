@@ -25,9 +25,10 @@ namespace WindowsFormsApplication1
         public const int saltByteSize = 16;
         public const int hashByteSize = 20;
         public const int hashingIterations = 100000;
+        public bool adminPriviledges = false;
         SaltAndHashGenerator shg = new SaltAndHashGenerator();
-        #endregion
         CRUD crud = new CRUD();
+        #endregion
             
         private Boolean checkUserExists()
         {
@@ -120,10 +121,11 @@ namespace WindowsFormsApplication1
                     bool hasPermission = bool.Parse(userDetails[3]);
                     if (hasPermission)
                     {
-                        MDIParent1 mdiparent = new MDIParent1();
-                        mdiparent.Show();
-                        this.Hide();
+                        adminPriviledges = true;
                     }
+                    MDIParent1 mdiparent = new MDIParent1();
+                    mdiparent.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -159,11 +161,5 @@ namespace WindowsFormsApplication1
             }
         }
         #endregion 
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            
-        }
-
     }
 }

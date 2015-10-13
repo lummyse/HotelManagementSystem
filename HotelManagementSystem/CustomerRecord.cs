@@ -68,52 +68,15 @@ namespace WindowsFormsApplication1
             DGV.DataMember = "result";
             sqlconn.Close();
         }
-
         private void CustomerRecord_Load(object sender, EventArgs e)
         {
-            //MDIParent1 mdi = new MDIParent1();
-            //this.Size = mdi.Size;
             displayRecordsInDGV();
-        }
-
-        private void SearchTB_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (allowedKeys.IsMatch(e.KeyChar.ToString()))
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == 13)
-            {
-                searchSN();
-            }
-        }
-
-        private void CustomerCB_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CustomerCB.Checked == true)
-            {
-                CustidTB.Enabled = true;
-            }
-            else
-                CustidTB.Enabled = false;
         }
 
         private void ShowAllB_Click(object sender, EventArgs e)
         {
             displayRecordsInDGV();
         }
-
-
-        private void CheckinCB_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckinCB.Checked == true)
-            {
-                CheckinDTP.Enabled = true;
-            }
-            else
-                CheckinDTP.Enabled = false;
-        }
-
         private void SearchB_Click(object sender, EventArgs e)
         {
             if (CustidTB.Text == "")
@@ -127,6 +90,15 @@ namespace WindowsFormsApplication1
             
         }
 
+        private void CustomerCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CustomerCB.Checked == true)
+            {
+                CustidTB.Enabled = true;
+            }
+            else
+                CustidTB.Enabled = false;
+        }
         private void CustnameCB_CheckedChanged(object sender, EventArgs e)
         {
             if (CustnameCB.Checked == true)
@@ -136,5 +108,28 @@ namespace WindowsFormsApplication1
             else
                 CustnameTB.Enabled = false;
         }
+        private void CheckinCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckinCB.Checked == true)
+            {
+                CheckinDTP.Enabled = true;
+            }
+            else
+                CheckinDTP.Enabled = false;
+        }
+
+        #region KEYPRESS
+        private void SearchTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (allowedKeys.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                searchSN();
+            }
+        }
+        #endregion
     }
 }

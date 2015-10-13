@@ -163,8 +163,8 @@
             this.Controls.Add(this.SearchB);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DGV);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CustomerRecord";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Record";
             this.Load += new System.EventHandler(this.CustomerRecord_Load);

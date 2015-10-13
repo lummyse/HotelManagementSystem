@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.loginB = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.loginB);
-            this.groupBox1.Location = new System.Drawing.Point(72, 67);
+            this.groupBox1.Location = new System.Drawing.Point(221, 182);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(375, 234);
             this.groupBox1.TabIndex = 0;
@@ -113,15 +114,25 @@
             this.loginB.UseVisualStyleBackColor = true;
             this.loginB.Click += new System.EventHandler(this.loginB_Click);
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(832, 72);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Hotel Management System";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 366);
+            this.ClientSize = new System.Drawing.Size(832, 428);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Name = "Login";
             this.Text = "LOGIN FORM";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -137,6 +148,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button loginB;
         private System.Windows.Forms.Button createAdminB;
+        private System.Windows.Forms.Label label3;
 
     }
 }

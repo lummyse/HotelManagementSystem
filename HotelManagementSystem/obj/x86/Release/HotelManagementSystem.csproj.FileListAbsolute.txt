@@ -1,0 +1,22 @@
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.csproj.GenerateResource.Cache
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\bin\Release\HotelManagementSystem.exe
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\bin\Release\HotelManagementSystem.pdb
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\bin\Release\MySql.Data.dll
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.exe
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.pdb
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.AdminControlPanel.resources
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.Login.resources
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.MDIParent1.resources
+E:\ \HotelManagementSystem\HotelManagementSystem\bin\Release\HotelManagementSystem.exe
+E:\ \HotelManagementSystem\HotelManagementSystem\bin\Release\HotelManagementSystem.pdb
+E:\ \HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.csprojResolveAssemblyReference.cache
+E:\ \HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.AdminControlPanel.resources
+E:\ \HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.CustomerRecord.resources
+E:\ \HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.Login.resources
+E:\ \HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.MDIParent1.resources
+E:\ \HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.Properties.Resources.resources
+E:\ \HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.csproj.GenerateResource.Cache
+E:\ \HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.exe
+E:\ \HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.pdb

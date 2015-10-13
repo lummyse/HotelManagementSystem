@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using MySql.Data.MySqlClient;
-
 namespace WindowsFormsApplication1
 {
     public partial class CustomerRecord : Form
@@ -17,49 +16,53 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        #region VARIABLES
+        CRUD crud = new CRUD();
+        SaltAndHashGenerator shg = new SaltAndHashGenerator();
         public static Regex allowedKeys = new Regex(@"[^a-zA-Z0-9\b]");
-        public static Regex alphabetonly = new Regex(@"[^a-zA-Z\b]");
-        public static Regex numbersonly = new Regex(@"[^0-9\b]");
-        private void SearchB_Click(object sender, EventArgs e)
-        {
-            if (SearchTB.Text == "")
-            {
-                displayRecordsInDGV();
-            }
-            else
-            {
-                searchSN();
-            }
-            
-        }
+        public const String stringconn = "Data Source = 127.0.0.1; userid = 'root'; password = ''; Initial Catalog = hotelsystem";
+        /*public const int saltByteSize = 16;
+        public const int hashByteSize = 20;
+        public const int hashingIterations = 100000;
+        public bool willChangePassword = false;
+        public bool hasPermission;
+        public int accountTypeNo;*/
+        #endregion
+
         void searchSN()
         {
-            String stringconn = "Data Source=localhost; userid='root'; password=''; initial Catalog=hotelsystem";
-            MySqlConnection sqlconn = new MySqlConnection(stringconn);
-            MySqlCommand sqlcomm = new MySqlCommand();
-            //MySqlDataReader sqlDR;
-
-            sqlconn.Open();
-            //sqlcomm.Connection = sqlconn;
-            String query = "SELECT * FROM customerrecord WHERE Lastname = '" + SearchTB.Text + "'";
-            
-            //sqlcomm.CommandText = query;
-            //sqlcomm.CommandType = CommandType.Text;
-            //sqlDR = sqlcomm.ExecuteReader();
-            //sqlDR.Read();
-            MySqlCommand sqlCommand = new MySqlCommand(query, sqlconn);
-            MySqlDataAdapter sqlDataA = new MySqlDataAdapter();
-            DataSet ds = new DataSet();
-            sqlDataA.SelectCommand = sqlCommand;
-            sqlDataA.Fill(ds, "result");
-            DGV.DataSource = ds;
-            DGV.DataMember = "result";
-            sqlconn.Close();
+            try
+            {
+                MySqlConnection sqlconn = new MySqlConnection(stringconn);
+                MySqlCommand sqlcomm = new MySqlCommand();
+                //MySqlDataReader sqlDR;
+                sqlconn.Open();
+                //sqlcomm.Connection = sqlconn;
+                String query = "SELECT * FROM customerrecord WHERE CustomerID = '" + CustidTB.Text + "' , CustomerName = '" + CustnameTB.Text + "'";
+                //sqlcomm.CommandText = query;
+                //sqlcomm.CommandType = CommandType.Text;
+                //sqlDR = sqlcomm.ExecuteReader();
+                //sqlDR.Read();
+                MySqlCommand sqlCommand = new MySqlCommand(query, sqlconn);
+                MySqlDataAdapter sqlDataA = new MySqlDataAdapter();
+                DataSet ds = new DataSet();
+                sqlDataA.SelectCommand = sqlCommand;
+                sqlDataA.Fill(ds, "result");
+                DGV.DataSource = ds;
+                DGV.DataMember = "result";
+                sqlconn.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Input!");
+                CustidTB.Clear();
+                CustnameTB.Clear();
+            }
         }
         public void displayRecordsInDGV()
         {
             String query = "SELECT * FROM customerrecord";
-            String stringconn = "Data Source = 127.0.0.1; userid = 'root'; password = ''; Initial Catalog = hotelsystem";
             MySqlConnection sqlconn = new MySqlConnection(stringconn);
             sqlconn.Open();
             MySqlCommand sqlCommand = new MySqlCommand(query, sqlconn);
@@ -89,6 +92,55 @@ namespace WindowsFormsApplication1
             {
                 searchSN();
             }
+        }
+
+        private void CustomerCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CustomerCB.Checked == true)
+            {
+                CustidTB.Enabled = true;
+            }
+            else
+                CustidTB.Enabled = false;
+        }
+
+        private void ShowAllB_Click(object sender, EventArgs e)
+        {
+            displayRecordsInDGV();
+        }
+
+
+        private void CheckinCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckinCB.Checked == true)
+            {
+                CheckinDTP.Enabled = true;
+            }
+            else
+                CheckinDTP.Enabled = false;
+        }
+
+        private void SearchB_Click(object sender, EventArgs e)
+        {
+            if (CustidTB.Text == "")
+            {
+                displayRecordsInDGV();
+            }
+            else
+            {
+                searchSN();
+            }
+            
+        }
+
+        private void CustnameCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CustnameCB.Checked == true)
+            {
+                CustnameTB.Enabled = true;
+            }
+            else
+                CustnameTB.Enabled = false;
         }
     }
 }

@@ -369,7 +369,7 @@ namespace WindowsFormsApplication1
 
         private void UserAccounts_Load(object sender, EventArgs e)
         {
-            displayRecordsInDGV();
+            displayRecordsInDGV(); 
         }
     }
 }

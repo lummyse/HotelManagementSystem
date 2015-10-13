@@ -22,12 +22,6 @@ namespace WindowsFormsApplication1
         SaltAndHashGenerator shg = new SaltAndHashGenerator();
         public static Regex allowedKeys = new Regex(@"[^a-zA-Z0-9\b]");
         public const String stringconn = "Data Source = 127.0.0.1; userid = 'root'; password = ''; Initial Catalog = hotelsystem";
-        /*public const int saltByteSize = 16;
-        public const int hashByteSize = 20;
-        public const int hashingIterations = 100000;
-        public bool willChangePassword = false;
-        public bool hasPermission;
-        public int accountTypeNo;*/
         #endregion
 
         void searchSN()

@@ -38,16 +38,12 @@ namespace WindowsFormsApplication1
         }
         private Boolean checkPasswordsMatch(String givenPassword, String passwordInDb)
         {
-            //split hashed password in DB
             char[] delimiter = { ':' };
             string[] split = passwordInDb.Split(delimiter);
             byte[] salt = Convert.FromBase64String(split[0]);
             byte[] storedHash = Convert.FromBase64String(split[1]);
-
-            //generate hash for the password given
             byte[] newHash = shg.generateHash(givenPassword, salt, hashingIterations, hashByteSize);
             
-            //compare the two hashes
             var diff = (uint)newHash.Length ^ (uint)storedHash.Length;
             for (var i = 0; (i < newHash.Length) && (i < storedHash.Length); i++)
             {
@@ -110,11 +106,9 @@ namespace WindowsFormsApplication1
                 String finalHash = Convert.ToBase64String(salt) + ":" + Convert.ToBase64String(hash);
                 var dbPassword = getDBPassword();
 
-
-
                 if (checkPasswordsMatch(password, dbPassword))
                 {
-                    MessageBox.Show("Access Granted");
+                    MessageBox.Show("Login Successfull");
                     String username = usernameTb.Text;
                     String query = "SELECT * FROM useraccounts WHERE Username='" + username + "'";
                     String[] userDetails = crud.getRecordRowDetails(stringconn, query, 4);
@@ -129,7 +123,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    MessageBox.Show("Access Denied");
+                    MessageBox.Show("Username or Password is Wrong");
                 }
             }
             else

@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication1
 {
-    public partial class UserAccounts : Form
+    public partial class AdminControlPanel : Form
     {
-        public UserAccounts()
+        public AdminControlPanel()
         {
             InitializeComponent();
         }
@@ -21,6 +21,8 @@ namespace WindowsFormsApplication1
         CRUD crud = new CRUD();
         SaltAndHashGenerator shg = new SaltAndHashGenerator();
         public static Regex allowedKeys = new Regex(@"[^a-zA-Z0-9\b]");
+        public static Regex alphabetonly = new Regex(@"[^a-zA-Z\b]");
+        public static Regex numbersonly = new Regex(@"[^0-9\b]");
         public const String stringconn = "Data Source = 127.0.0.1; userid = 'root'; password = ''; Initial Catalog = hotelsystem";
         public const int saltByteSize = 16;
         public const int hashByteSize = 20;
@@ -32,25 +34,11 @@ namespace WindowsFormsApplication1
 
         private void addAccountBt_Click(object sender, EventArgs e)
         {
-            if (usernameAddTb.TextLength == 0 || password1AddTb.TextLength == 0 || password2AddTb.TextLength == 0)
-            {
-                MessageBox.Show("Please complete all fields");
-            }
-            else
-            {
-                addRecord();
-            }
+            addRecord();
         }
         private void editLoadBt_Click(object sender, EventArgs e)
         {
-            if (usernameEditTb.TextLength == 0)
-            {
-                MessageBox.Show("Enter username");
-            }
-            else
-            {
-                loadDetails();
-            }
+            loadDetails();
         }
         private void passEditBt_Click(object sender, EventArgs e)
         {
@@ -60,25 +48,49 @@ namespace WindowsFormsApplication1
         }
         private void editBt_Click(object sender, EventArgs e)
         {
-            editRecord();
-        }
-        private void deleteBt_Click(object sender, EventArgs e)
-        {
-            if (usernameDeleteTb.TextLength == 0)
+            String username = usernameEditTb.Text;
+            String query = "SELECT * FROM useraccounts WHERE Username='" + username + "'";
+            if (willChangePassword)
             {
-                MessageBox.Show("Enter username");
+                String password1 = password1EditTb.Text;
+                String password2 = password2EditTb.Text;
+                String[] userDetails = crud.getRecordRowDetails(stringconn, query, 4);
+                String oldPasswordInDB = userDetails[1];
+                String oldPassword = oldPasswordTb.Text;
+                if ((password1.Equals(password2)) && (password1 != "") && (oldPassword.Equals(oldPasswordInDB)))
+                {
+                    byte[] salt = shg.generateSalt(saltByteSize);
+                    byte[] hash = shg.generateHash(password1, salt, hashingIterations, hashByteSize);
+                    String finalHash = Convert.ToBase64String(salt) + ":" + Convert.ToBase64String(hash);
+                    query = "UPDATE useraccounts SET Password = '" + password1 + "', Hashed_Password = '" + finalHash + "', Full_Permission = '" + accountTypeNo + "' WHERE Username = '" + username + "'";
+                }
+                else
+                {
+                    MessageBox.Show("Passwords don't match");
+                    return;
+                }
             }
             else
             {
-                deleteRecord();
+                query = "UPDATE useraccounts SET Full_Permission = '" + accountTypeNo + "' WHERE Username = '" + username + "'";
             }
+            crud.addRecord(stringconn, query, "Details successfully edited!");
+            displayRecordsInDGV();
+            clearAllText(this);
+        }
+        private void deleteBt_Click(object sender, EventArgs e)
+        {
+            String username = usernameDeleteTb.Text;
+            String query = "DELETE FROM useraccounts WHERE Username='"+username+"'";
+            crud.deleteRecord(stringconn, query, "User Deleted!");
+            displayRecordsInDGV();
+            clearAllText(this);
         }
 
         private void usernameEditTb_TextChanged(object sender, EventArgs e)
         {
             oldPasswordLabel.Visible = false;
             oldPasswordTb.Visible = false;
-            oldPasswordTb.Enabled = false;
             password1EditTb.Visible = false;
             password1EditTb.Enabled = false;
             password1Label.Visible = false;
@@ -102,7 +114,6 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                oldPasswordTb.Enabled = false;
                 password1EditTb.Enabled = false;
                 password2EditTb.Enabled = false;
                 willChangePassword = false;
@@ -148,11 +159,19 @@ namespace WindowsFormsApplication1
             sqlconn.Close();
         }
 
+        private void AdminControlPanel_Load(object sender, EventArgs e)
+        {
+            //MDIParent1 mdi = new MDIParent1();
+            //this.Size = mdi.Size;
+            displayRecordsInDGV();
+        }
+
         private void addRecord()
         {
             String username = usernameAddTb.Text;
             String query = "SELECT Username FROM useraccounts WHERE Username ='" + username + "'";
 
+            //Check if username exists
             if (crud.isExistingRecord(stringconn, query))
             {
                 MessageBox.Show("Invalid Username");
@@ -162,6 +181,7 @@ namespace WindowsFormsApplication1
                 String password1 = password1AddTb.Text;
                 String password2 = password2AddTb.Text;
 
+                //Check if password is same as the reentered password, hash it, then store.
                 if (password1.Equals(password2))
                 {
                     int permissionNo = 0;
@@ -176,7 +196,6 @@ namespace WindowsFormsApplication1
                     query = "INSERT INTO useraccounts VALUES('" + username + "','" + password1 + "','" + finalHash + "','" + permissionNo + "')";
                     String message = "Account Registered!";
                     crud.addRecord(stringconn, query, message);
-                    clearAllText(this);
                 }
                 else
                 {
@@ -184,62 +203,7 @@ namespace WindowsFormsApplication1
                 }
             }
             displayRecordsInDGV();
-        }
-        private void editRecord()
-        {
-            String username = usernameEditTb.Text;
-            String query = "SELECT * FROM useraccounts WHERE Username='" + username + "'";
-            if (willChangePassword)
-            {
-                String password1 = password1EditTb.Text;
-                String password2 = password2EditTb.Text;
-                String[] userDetails = crud.getRecordRowDetails(stringconn, query, 4);
-                String oldPasswordInDB = userDetails[1];
-                String oldPassword = oldPasswordTb.Text;
-
-                if (oldPasswordTb.TextLength == 0 || password1EditTb.TextLength == 0 || password2EditTb.TextLength == 0)
-                {
-                    MessageBox.Show("Incomplete fields");
-                    return;
-                }
-                if(!oldPassword.Equals(oldPasswordInDB)){
-                    MessageBox.Show("Old password entered does not match registered password in database");
-                    return;
-                }
-                if (!password1.Equals(password2))
-                {
-                    MessageBox.Show("Passwords don't match");
-                    return;
-                }
-
-                byte[] salt = shg.generateSalt(saltByteSize);
-                byte[] hash = shg.generateHash(password1, salt, hashingIterations, hashByteSize);
-                String finalHash = Convert.ToBase64String(salt) + ":" + Convert.ToBase64String(hash);
-                query = "UPDATE useraccounts SET Password = '" + password1 + "', Hashed_Password = '" + finalHash + "', Full_Permission = '" + accountTypeNo + "' WHERE Username = '" + username + "'";
-            }
-            else
-            {
-                query = "UPDATE useraccounts SET Full_Permission = '" + accountTypeNo + "' WHERE Username = '" + username + "'";
-            }
-            crud.addRecord(stringconn, query, "Details successfully edited!");
-            displayRecordsInDGV();
             clearAllText(this);
-        }
-        private void deleteRecord()
-        {
-            String username = usernameDeleteTb.Text;
-            String query = "SELECT * FROM useraccounts WHERE Username='" + username + "'";
-            if (crud.isExistingRecord(stringconn, query))
-            {
-                query = "DELETE FROM useraccounts WHERE Username='" + username + "'";
-                crud.deleteRecord(stringconn, query, "User Deleted!");
-                displayRecordsInDGV();
-                clearAllText(this);
-            }
-            else
-            {
-                MessageBox.Show("Username doesn't exist");
-            }
         }
         private void loadDetails()
         {
@@ -273,7 +237,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Username doesn't exists");
             }
         }
-
         #region KEYPRESS EVENTS
         private void usernameAddTb_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -308,7 +271,6 @@ namespace WindowsFormsApplication1
                 addRecord();
             }
         }
-
         private void usernameEditTb_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (allowedKeys.IsMatch(e.KeyChar.ToString()))
@@ -320,6 +282,7 @@ namespace WindowsFormsApplication1
                 loadDetails();
             }
         }
+
         private void oldPasswordTb_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (allowedKeys.IsMatch(e.KeyChar.ToString()))
@@ -328,7 +291,7 @@ namespace WindowsFormsApplication1
             }
             if (e.KeyChar == 13)
             {
-                editRecord();
+                loadDetails();
             }
         }
         private void password1EditTb_KeyPress(object sender, KeyPressEventArgs e)
@@ -337,20 +300,13 @@ namespace WindowsFormsApplication1
             {
                 e.Handled = true;
             }
-            if (e.KeyChar == 13)
-            {
-                editRecord();
-            }
         }
+
         private void password2EditTb_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (allowedKeys.IsMatch(e.KeyChar.ToString()))
             {
                 e.Handled = true;
-            }
-            if (e.KeyChar == 13)
-            {
-                editRecord();
             }
         }
 
@@ -360,19 +316,10 @@ namespace WindowsFormsApplication1
             {
                 e.Handled = true;
             }
-            if (e.KeyChar == 13)
-            {
-                deleteRecord();
-            }
         }
         #endregion
 
-        private void UserAccounts_Load(object sender, EventArgs e)
-        {
-            displayRecordsInDGV();
-        }
-
-
+        
 
       
     }

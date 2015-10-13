@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.createAdminB = new System.Windows.Forms.Button();
             this.passwordTb = new System.Windows.Forms.TextBox();
@@ -35,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.loginB = new System.Windows.Forms.Button();
+            this.fadeInTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,6 +115,10 @@
             this.loginB.UseVisualStyleBackColor = true;
             this.loginB.Click += new System.EventHandler(this.loginB_Click);
             // 
+            // fadeInTimer
+            // 
+            this.fadeInTimer.Tick += new System.EventHandler(this.fadeInTimer_Tick);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +143,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button loginB;
         private System.Windows.Forms.Button createAdminB;
+        private System.Windows.Forms.Timer fadeInTimer;
 
     }
 }

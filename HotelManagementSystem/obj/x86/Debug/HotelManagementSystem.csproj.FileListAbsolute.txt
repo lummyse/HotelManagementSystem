@@ -48,3 +48,16 @@ C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\
 C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.CustomerRecord.resources
 C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.UserAccounts.resources
 C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.Rooms.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\bin\Debug\HotelManagementSystem.exe
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\bin\Debug\HotelManagementSystem.pdb
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\HotelManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.Rooms.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.UserAccounts.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.CheckIn.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.CustomerRecord.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.Login.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.MDIParent1.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\HotelManagementSystem.csproj.GenerateResource.Cache
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\HotelManagementSystem.exe
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\HotelManagementSystem.pdb

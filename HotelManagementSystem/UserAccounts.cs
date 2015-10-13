@@ -188,7 +188,7 @@ namespace WindowsFormsApplication1
         private void editRecord()
         {
             String username = usernameEditTb.Text;
-            String query = "SELECT * FROM useraccounts WHERE Username='" + username + "'";
+            String query = "SELECT * FROM useraccounts WHERE Username = '" + username + "'";
             if (willChangePassword)
             {
                 String password1 = password1EditTb.Text;
@@ -371,9 +371,5 @@ namespace WindowsFormsApplication1
         {
             displayRecordsInDGV();
         }
-
-
-
-      
     }
 }

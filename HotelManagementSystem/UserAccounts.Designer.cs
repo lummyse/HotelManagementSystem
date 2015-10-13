@@ -106,7 +106,7 @@
             this.addAccountBt.Location = new System.Drawing.Point(270, 136);
             this.addAccountBt.Name = "addAccountBt";
             this.addAccountBt.Size = new System.Drawing.Size(167, 38);
-            this.addAccountBt.TabIndex = 14;
+            this.addAccountBt.TabIndex = 6;
             this.addAccountBt.Tag = "Enter";
             this.addAccountBt.Text = "Create Account";
             this.addAccountBt.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             this.password2AddTb.MaxLength = 25;
             this.password2AddTb.Name = "password2AddTb";
             this.password2AddTb.Size = new System.Drawing.Size(131, 20);
-            this.password2AddTb.TabIndex = 13;
+            this.password2AddTb.TabIndex = 3;
             this.password2AddTb.UseSystemPasswordChar = true;
             this.password2AddTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.password2AddTb_KeyPress);
             // 
@@ -128,7 +128,7 @@
             this.password1AddTb.MaxLength = 25;
             this.password1AddTb.Name = "password1AddTb";
             this.password1AddTb.Size = new System.Drawing.Size(131, 20);
-            this.password1AddTb.TabIndex = 12;
+            this.password1AddTb.TabIndex = 2;
             this.password1AddTb.UseSystemPasswordChar = true;
             this.password1AddTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.password1AddTb_KeyPress);
             // 
@@ -139,7 +139,7 @@
             this.usernameAddTb.Name = "usernameAddTb";
             this.usernameAddTb.ShortcutsEnabled = false;
             this.usernameAddTb.Size = new System.Drawing.Size(131, 20);
-            this.usernameAddTb.TabIndex = 11;
+            this.usernameAddTb.TabIndex = 1;
             this.usernameAddTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usernameAddTb_KeyPress);
             // 
             // groupBox3
@@ -172,6 +172,7 @@
             this.adminAddRb.Name = "adminAddRb";
             this.adminAddRb.Size = new System.Drawing.Size(54, 17);
             this.adminAddRb.TabIndex = 4;
+            this.adminAddRb.TabStop = true;
             this.adminAddRb.Text = "Admin";
             this.adminAddRb.UseVisualStyleBackColor = true;
             // 
@@ -230,7 +231,7 @@
             this.changePasswordCb.Location = new System.Drawing.Point(148, 176);
             this.changePasswordCb.Name = "changePasswordCb";
             this.changePasswordCb.Size = new System.Drawing.Size(111, 17);
-            this.changePasswordCb.TabIndex = 16;
+            this.changePasswordCb.TabIndex = 12;
             this.changePasswordCb.Text = "Change password";
             this.changePasswordCb.UseVisualStyleBackColor = true;
             this.changePasswordCb.Visible = false;
@@ -241,7 +242,7 @@
             this.editLoadBt.Location = new System.Drawing.Point(168, 79);
             this.editLoadBt.Name = "editLoadBt";
             this.editLoadBt.Size = new System.Drawing.Size(84, 23);
-            this.editLoadBt.TabIndex = 20;
+            this.editLoadBt.TabIndex = 8;
             this.editLoadBt.Text = "Load Details";
             this.editLoadBt.UseVisualStyleBackColor = true;
             this.editLoadBt.Click += new System.EventHandler(this.editLoadBt_Click);
@@ -251,7 +252,7 @@
             this.editBt.Location = new System.Drawing.Point(270, 164);
             this.editBt.Name = "editBt";
             this.editBt.Size = new System.Drawing.Size(167, 38);
-            this.editBt.TabIndex = 19;
+            this.editBt.TabIndex = 15;
             this.editBt.Tag = "Enter";
             this.editBt.Text = "Change Account Details";
             this.editBt.UseVisualStyleBackColor = true;
@@ -265,7 +266,7 @@
             this.password2EditTb.MaxLength = 25;
             this.password2EditTb.Name = "password2EditTb";
             this.password2EditTb.Size = new System.Drawing.Size(131, 20);
-            this.password2EditTb.TabIndex = 12;
+            this.password2EditTb.TabIndex = 11;
             this.password2EditTb.UseSystemPasswordChar = true;
             this.password2EditTb.Visible = false;
             this.password2EditTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.password2EditTb_KeyPress);
@@ -277,7 +278,7 @@
             this.oldPasswordTb.MaxLength = 25;
             this.oldPasswordTb.Name = "oldPasswordTb";
             this.oldPasswordTb.Size = new System.Drawing.Size(131, 20);
-            this.oldPasswordTb.TabIndex = 11;
+            this.oldPasswordTb.TabIndex = 9;
             this.oldPasswordTb.UseSystemPasswordChar = true;
             this.oldPasswordTb.Visible = false;
             this.oldPasswordTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oldPasswordTb_KeyPress);
@@ -300,7 +301,7 @@
             this.usernameEditTb.MaxLength = 20;
             this.usernameEditTb.Name = "usernameEditTb";
             this.usernameEditTb.Size = new System.Drawing.Size(131, 20);
-            this.usernameEditTb.TabIndex = 9;
+            this.usernameEditTb.TabIndex = 7;
             this.usernameEditTb.TextChanged += new System.EventHandler(this.usernameEditTb_TextChanged);
             this.usernameEditTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usernameEditTb_KeyPress);
             // 
@@ -323,7 +324,7 @@
             this.employeeEditRd.Location = new System.Drawing.Point(86, 29);
             this.employeeEditRd.Name = "employeeEditRd";
             this.employeeEditRd.Size = new System.Drawing.Size(71, 17);
-            this.employeeEditRd.TabIndex = 6;
+            this.employeeEditRd.TabIndex = 14;
             this.employeeEditRd.TabStop = true;
             this.employeeEditRd.Text = "Employee";
             this.employeeEditRd.UseVisualStyleBackColor = true;
@@ -335,7 +336,8 @@
             this.adminEditRd.Location = new System.Drawing.Point(17, 29);
             this.adminEditRd.Name = "adminEditRd";
             this.adminEditRd.Size = new System.Drawing.Size(54, 17);
-            this.adminEditRd.TabIndex = 5;
+            this.adminEditRd.TabIndex = 13;
+            this.adminEditRd.TabStop = true;
             this.adminEditRd.Text = "Admin";
             this.adminEditRd.UseVisualStyleBackColor = true;
             this.adminEditRd.CheckedChanged += new System.EventHandler(this.adminEditRd_CheckedChanged);
@@ -397,7 +399,7 @@
             this.deleteBt.Location = new System.Drawing.Point(192, 73);
             this.deleteBt.Name = "deleteBt";
             this.deleteBt.Size = new System.Drawing.Size(112, 28);
-            this.deleteBt.TabIndex = 14;
+            this.deleteBt.TabIndex = 17;
             this.deleteBt.Tag = "Enter";
             this.deleteBt.Text = "Delete Account";
             this.deleteBt.UseVisualStyleBackColor = true;
@@ -409,7 +411,7 @@
             this.usernameDeleteTb.MaxLength = 20;
             this.usernameDeleteTb.Name = "usernameDeleteTb";
             this.usernameDeleteTb.Size = new System.Drawing.Size(183, 20);
-            this.usernameDeleteTb.TabIndex = 13;
+            this.usernameDeleteTb.TabIndex = 16;
             this.usernameDeleteTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usernameDeleteTb_KeyPress);
             // 
             // label7

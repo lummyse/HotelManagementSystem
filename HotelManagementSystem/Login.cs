@@ -25,9 +25,10 @@ namespace WindowsFormsApplication1
         public const int saltByteSize = 16;
         public const int hashByteSize = 20;
         public const int hashingIterations = 100000;
+        private double opacity = 0.095;
         SaltAndHashGenerator shg = new SaltAndHashGenerator();
-        #endregion
         CRUD crud = new CRUD();
+        #endregion
             
         private Boolean checkUserExists()
         {
@@ -162,7 +163,20 @@ namespace WindowsFormsApplication1
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
+            this.Opacity = 0;
+            fadeInTimer.Interval = 100;
+            fadeInTimer.Start();
+        }
+        private void fadeInTimer_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 1)
+            {
+                this.Opacity += opacity;
+            }
+            else
+            {
+                fadeInTimer.Stop();
+            }
         }
 
     }

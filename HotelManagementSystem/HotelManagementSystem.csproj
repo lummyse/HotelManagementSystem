@@ -70,6 +70,18 @@
     <Compile Include="EmployeeRecord.designer.cs">
       <DependentUpon>EmployeeRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderingSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderingSystem.Designer.cs">
+      <DependentUpon>OrderingSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderingRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderingRecord.Designer.cs">
+      <DependentUpon>OrderingRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EmployeeRecord.resx">
       <DependentUpon>EmployeeRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderingSystem.resx">
+      <DependentUpon>OrderingSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderingRecord.resx">
+      <DependentUpon>OrderingRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rooms.resx">
       <DependentUpon>Rooms.cs</DependentUpon>

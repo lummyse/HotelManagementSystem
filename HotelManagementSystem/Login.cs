@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         public const String stringconn = "Data Source = 127.0.0.1; userid = 'root'; password = ''; Initial Catalog = hotelsystem";
         public const int saltByteSize = 16;
         public const int hashByteSize = 20;
-        public const int hashingIterations = 100000;
+        public const int hashingIterations = 50000;
         public bool adminPriviledges = true;
         SaltAndHashGenerator shg = new SaltAndHashGenerator();
         CRUD crud = new CRUD();
@@ -155,10 +155,5 @@ namespace WindowsFormsApplication1
             }
         }
         #endregion 
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -23,3 +23,15 @@ C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\
 C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.UserAccounts.resources
 C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.CheckIn.resources
 C:\Users\Irish Chua\Documents\Visual Studio 2010\Projects\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.CustomerRecord.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.Rooms.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.UserAccounts.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.CheckIn.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.CustomerRecord.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.Login.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.MDIParent1.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.csproj.GenerateResource.Cache
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\bin\Release\HotelManagementSystem.exe
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\bin\Release\HotelManagementSystem.pdb
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.exe
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Release\HotelManagementSystem.pdb

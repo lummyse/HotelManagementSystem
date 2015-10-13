@@ -61,7 +61,8 @@
             this.ExitTSB = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.DatetimeT = new System.Windows.Forms.Timer(this.components);
+            this.Date = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -187,13 +188,13 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
             this.toolStripMenuItem2.Text = "&Customer Info";
             // 
             // setRoomPriceToolStripMenuItem
             // 
             this.setRoomPriceToolStripMenuItem.Name = "setRoomPriceToolStripMenuItem";
-            this.setRoomPriceToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.setRoomPriceToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.setRoomPriceToolStripMenuItem.Text = "&Set Room Price";
             // 
             // reportToolStripMenuItem
@@ -208,13 +209,13 @@
             // checkInToolStripMenuItem
             // 
             this.checkInToolStripMenuItem.Name = "checkInToolStripMenuItem";
-            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.checkInToolStripMenuItem.Text = "Check In";
             // 
             // checkOutToolStripMenuItem
             // 
             this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.checkOutToolStripMenuItem.Text = "Check Out";
             // 
             // administratorToolStripMenuItem
@@ -312,21 +313,27 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // label1
+            // DatetimeT
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(887, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.DatetimeT.Enabled = true;
+            this.DatetimeT.Interval = 1;
+            // 
+            // Date
+            // 
+            this.Date.AutoSize = true;
+            this.Date.Location = new System.Drawing.Point(818, 30);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(63, 13);
+            this.Date.TabIndex = 5;
+            this.Date.Text = "Date Today";
+            this.Date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MDIParent1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Date);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
@@ -375,9 +382,10 @@
         private System.Windows.Forms.ToolStripButton LogoutTSB;
         private System.Windows.Forms.ToolStripButton ExitTSB;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem administratorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem employeeAccountsTS;
+        private System.Windows.Forms.Timer DatetimeT;
+        private System.Windows.Forms.Label Date;
     }
 }
 

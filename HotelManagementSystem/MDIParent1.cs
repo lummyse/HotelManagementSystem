@@ -77,6 +77,11 @@ namespace WindowsFormsApplication1
             
         }
 
+        private void DatetimeT_Tick(object sender, EventArgs e)
+        {
+            Date.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
+        }
+
         //Irish
         private void employeeAccountsTS_Click(object sender, EventArgs e)
         {

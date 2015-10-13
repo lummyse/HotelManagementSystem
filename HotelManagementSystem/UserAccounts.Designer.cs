@@ -82,6 +82,7 @@
             this.accountsDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.accountsDataGridView.Size = new System.Drawing.Size(547, 572);
             this.accountsDataGridView.TabIndex = 0;
+            this.accountsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.accountsDataGridView_CellContentClick);
             // 
             // groupBox2
             // 

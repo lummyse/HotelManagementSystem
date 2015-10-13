@@ -25,7 +25,7 @@ namespace WindowsFormsApplication1
         public const int saltByteSize = 16;
         public const int hashByteSize = 20;
         public const int hashingIterations = 100000;
-        public bool adminPriviledges = false;
+        public bool adminPriviledges = true;
         SaltAndHashGenerator shg = new SaltAndHashGenerator();
         CRUD crud = new CRUD();
         #endregion
@@ -155,5 +155,10 @@ namespace WindowsFormsApplication1
             }
         }
         #endregion 
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

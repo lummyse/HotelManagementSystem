@@ -371,5 +371,11 @@ namespace WindowsFormsApplication1
         {
             displayRecordsInDGV(); 
         }
+
+        private void accountsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            usernameEditTb.Text = accountsDataGridView.CurrentRow.Cells[0].Value.ToString();
+            usernameDeleteTb.Text = accountsDataGridView.CurrentRow.Cells[0].Value.ToString();
+        }
     }
 }

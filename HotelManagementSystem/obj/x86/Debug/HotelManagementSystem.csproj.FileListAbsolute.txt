@@ -61,3 +61,4 @@ C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem
 C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\HotelManagementSystem.csproj.GenerateResource.Cache
 C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\HotelManagementSystem.exe
 C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\HotelManagementSystem.pdb
+C:\Users\Irish Chua\Documents\GitHub\HotelManagementSystem\HotelManagementSystem\obj\x86\Debug\WindowsFormsApplication1.EmployeeRecord.resources

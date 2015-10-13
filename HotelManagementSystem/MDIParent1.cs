@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
         private void EmployeeTS_Click(object sender, EventArgs e)
         {
             ClosePrevChildForm();
-            AdminControlPanel employeerecord = new AdminControlPanel();
+            UserAccounts employeerecord = new UserAccounts();
             employeerecord.MdiParent = this;
             employeerecord.Show();
             
@@ -72,6 +72,16 @@ namespace WindowsFormsApplication1
             checkin.MdiParent = this;
             checkin.Show();
             
+        }
+
+        //Irish
+        private void employeeAccountsTS_Click(object sender, EventArgs e)
+        {
+            ClosePrevChildForm();
+            UserAccounts employeeAccounts = new UserAccounts();
+            employeeAccounts.MdiParent = this;
+            employeeAccounts.Size = this.Size;
+            employeeAccounts.Show();
         }
     }
 }

@@ -43,30 +43,32 @@
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.CustomerTS = new System.Windows.Forms.ToolStripMenuItem();
             this.EmployeeTS = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.InventoryTS = new System.Windows.Forms.ToolStripMenuItem();
             this.utilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.setRoomPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.changeUsernamePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeAccountsTS = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.LogoutTSB = new System.Windows.Forms.ToolStripButton();
+            this.ExitTSB = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
@@ -80,7 +82,8 @@
             this.viewMenu,
             this.utilityToolStripMenuItem,
             this.securityToolStripMenuItem,
-            this.reportToolStripMenuItem});
+            this.reportToolStripMenuItem,
+            this.administratorToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(984, 24);
@@ -103,7 +106,7 @@
             // 
             this.RoomTS.ImageTransparentColor = System.Drawing.Color.Black;
             this.RoomTS.Name = "RoomTS";
-            this.RoomTS.Size = new System.Drawing.Size(152, 22);
+            this.RoomTS.Size = new System.Drawing.Size(151, 22);
             this.RoomTS.Text = "&View All Room";
             this.RoomTS.Click += new System.EventHandler(this.RoomTS_Click);
             // 
@@ -111,19 +114,19 @@
             // 
             this.LogoutTS.ImageTransparentColor = System.Drawing.Color.Black;
             this.LogoutTS.Name = "LogoutTS";
-            this.LogoutTS.Size = new System.Drawing.Size(152, 22);
+            this.LogoutTS.Size = new System.Drawing.Size(151, 22);
             this.LogoutTS.Text = "&Log Out";
             this.LogoutTS.Click += new System.EventHandler(this.LogoutTS_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(148, 6);
             // 
             // ExitTS
             // 
             this.ExitTS.Name = "ExitTS";
-            this.ExitTS.Size = new System.Drawing.Size(152, 22);
+            this.ExitTS.Size = new System.Drawing.Size(151, 22);
             this.ExitTS.Text = "E&xit";
             this.ExitTS.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
             // 
@@ -141,7 +144,7 @@
             // 
             this.CheckinTS.ImageTransparentColor = System.Drawing.Color.Black;
             this.CheckinTS.Name = "CheckinTS";
-            this.CheckinTS.Size = new System.Drawing.Size(152, 22);
+            this.CheckinTS.Size = new System.Drawing.Size(130, 22);
             this.CheckinTS.Text = "&Check In";
             this.CheckinTS.Click += new System.EventHandler(this.CheckinTS_Click);
             // 
@@ -149,14 +152,14 @@
             // 
             this.BookingTS.ImageTransparentColor = System.Drawing.Color.Black;
             this.BookingTS.Name = "BookingTS";
-            this.BookingTS.Size = new System.Drawing.Size(152, 22);
+            this.BookingTS.Size = new System.Drawing.Size(130, 22);
             this.BookingTS.Text = "&Booking";
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.cutToolStripMenuItem.Text = "&Check Out";
             // 
             // viewMenu
@@ -179,9 +182,107 @@
             // EmployeeTS
             // 
             this.EmployeeTS.Name = "EmployeeTS";
-            this.EmployeeTS.Size = new System.Drawing.Size(171, 22);
+            this.EmployeeTS.Size = new System.Drawing.Size(184, 22);
             this.EmployeeTS.Text = "&Employee Records";
             this.EmployeeTS.Click += new System.EventHandler(this.EmployeeTS_Click);
+            // 
+            // InventoryTS
+            // 
+            this.InventoryTS.Name = "InventoryTS";
+            this.InventoryTS.Size = new System.Drawing.Size(184, 22);
+            this.InventoryTS.Text = "&Inventory Records";
+            // 
+            // utilityToolStripMenuItem
+            // 
+            this.utilityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.setRoomPriceToolStripMenuItem,
+            this.roomInformationToolStripMenuItem});
+            this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
+            this.utilityToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.utilityToolStripMenuItem.Text = "&Utility";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem2.Text = "&Customer Info";
+            // 
+            // setRoomPriceToolStripMenuItem
+            // 
+            this.setRoomPriceToolStripMenuItem.Name = "setRoomPriceToolStripMenuItem";
+            this.setRoomPriceToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.setRoomPriceToolStripMenuItem.Text = "&Set Room Price";
+            // 
+            // roomInformationToolStripMenuItem
+            // 
+            this.roomInformationToolStripMenuItem.Name = "roomInformationToolStripMenuItem";
+            this.roomInformationToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.roomInformationToolStripMenuItem.Text = "&Room Information";
+            // 
+            // securityToolStripMenuItem
+            // 
+            this.securityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3,
+            this.changeUsernamePasswordToolStripMenuItem});
+            this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
+            this.securityToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.securityToolStripMenuItem.Text = "&Security";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(226, 22);
+            this.toolStripMenuItem3.Text = "&Set Up User";
+            // 
+            // changeUsernamePasswordToolStripMenuItem
+            // 
+            this.changeUsernamePasswordToolStripMenuItem.Name = "changeUsernamePasswordToolStripMenuItem";
+            this.changeUsernamePasswordToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.changeUsernamePasswordToolStripMenuItem.Text = "&Change Username/Password";
+            // 
+            // reportToolStripMenuItem
+            // 
+            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.checkInToolStripMenuItem,
+            this.bookingToolStripMenuItem,
+            this.checkOutToolStripMenuItem});
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.reportToolStripMenuItem.Text = "&Report";
+            // 
+            // checkInToolStripMenuItem
+            // 
+            this.checkInToolStripMenuItem.Name = "checkInToolStripMenuItem";
+            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.checkInToolStripMenuItem.Text = "Check In";
+            // 
+            // bookingToolStripMenuItem
+            // 
+            this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.bookingToolStripMenuItem.Text = "Booking";
+            // 
+            // checkOutToolStripMenuItem
+            // 
+            this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.checkOutToolStripMenuItem.Text = "Check Out";
+            // 
+            // administratorToolStripMenuItem
+            // 
+            this.administratorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.employeeAccountsTS});
+            this.administratorToolStripMenuItem.Name = "administratorToolStripMenuItem";
+            this.administratorToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.administratorToolStripMenuItem.Text = "Administrator";
+            // 
+            // employeeAccountsTS
+            // 
+            this.employeeAccountsTS.Name = "employeeAccountsTS";
+            this.employeeAccountsTS.Size = new System.Drawing.Size(179, 22);
+            this.employeeAccountsTS.Text = "Employee Accounts";
+            this.employeeAccountsTS.Click += new System.EventHandler(this.employeeAccountsTS_Click);
             // 
             // toolStrip
             // 
@@ -193,8 +294,8 @@
             this.toolStripButton4,
             this.toolStripButton5,
             this.toolStripSeparator2,
-            this.toolStripButton6,
-            this.toolStripButton7,
+            this.LogoutTSB,
+            this.ExitTSB,
             this.toolStripSeparator3});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
@@ -227,89 +328,6 @@
             this.toolStripButton3.Size = new System.Drawing.Size(67, 22);
             this.toolStripButton3.Text = "Check Out";
             // 
-            // InventoryTS
-            // 
-            this.InventoryTS.Name = "InventoryTS";
-            this.InventoryTS.Size = new System.Drawing.Size(171, 22);
-            this.InventoryTS.Text = "&Inventory Records";
-            // 
-            // utilityToolStripMenuItem
-            // 
-            this.utilityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.setRoomPriceToolStripMenuItem,
-            this.roomInformationToolStripMenuItem});
-            this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
-            this.utilityToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.utilityToolStripMenuItem.Text = "&Utility";
-            // 
-            // securityToolStripMenuItem
-            // 
-            this.securityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3,
-            this.changeUsernamePasswordToolStripMenuItem});
-            this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
-            this.securityToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.securityToolStripMenuItem.Text = "&Security";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 22);
-            this.toolStripMenuItem2.Text = "&Customer Info";
-            // 
-            // setRoomPriceToolStripMenuItem
-            // 
-            this.setRoomPriceToolStripMenuItem.Name = "setRoomPriceToolStripMenuItem";
-            this.setRoomPriceToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.setRoomPriceToolStripMenuItem.Text = "&Set Room Price";
-            // 
-            // roomInformationToolStripMenuItem
-            // 
-            this.roomInformationToolStripMenuItem.Name = "roomInformationToolStripMenuItem";
-            this.roomInformationToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.roomInformationToolStripMenuItem.Text = "&Room Information";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(226, 22);
-            this.toolStripMenuItem3.Text = "&Set Up User";
-            // 
-            // changeUsernamePasswordToolStripMenuItem
-            // 
-            this.changeUsernamePasswordToolStripMenuItem.Name = "changeUsernamePasswordToolStripMenuItem";
-            this.changeUsernamePasswordToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.changeUsernamePasswordToolStripMenuItem.Text = "&Change Username/Password";
-            // 
-            // reportToolStripMenuItem
-            // 
-            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.checkInToolStripMenuItem,
-            this.bookingToolStripMenuItem,
-            this.checkOutToolStripMenuItem});
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.reportToolStripMenuItem.Text = "&Report";
-            // 
-            // checkInToolStripMenuItem
-            // 
-            this.checkInToolStripMenuItem.Name = "checkInToolStripMenuItem";
-            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.checkInToolStripMenuItem.Text = "Check In";
-            // 
-            // bookingToolStripMenuItem
-            // 
-            this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
-            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.bookingToolStripMenuItem.Text = "Booking";
-            // 
-            // checkOutToolStripMenuItem
-            // 
-            this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.checkOutToolStripMenuItem.Text = "Check Out";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -339,24 +357,25 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton6
+            // LogoutTSB
             // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(54, 22);
-            this.toolStripButton6.Text = "Log Out";
+            this.LogoutTSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.LogoutTSB.Image = ((System.Drawing.Image)(resources.GetObject("LogoutTSB.Image")));
+            this.LogoutTSB.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.LogoutTSB.Name = "LogoutTSB";
+            this.LogoutTSB.Size = new System.Drawing.Size(54, 22);
+            this.LogoutTSB.Text = "Log Out";
+            this.LogoutTSB.Click += new System.EventHandler(this.LogoutTS_Click);
             // 
-            // toolStripButton7
+            // ExitTSB
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(29, 22);
-            this.toolStripButton7.Text = "Exit";
-            this.toolStripButton7.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
+            this.ExitTSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ExitTSB.Image = ((System.Drawing.Image)(resources.GetObject("ExitTSB.Image")));
+            this.ExitTSB.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ExitTSB.Name = "ExitTSB";
+            this.ExitTSB.Size = new System.Drawing.Size(29, 22);
+            this.ExitTSB.Text = "Exit";
+            this.ExitTSB.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -430,10 +449,12 @@
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton LogoutTSB;
+        private System.Windows.Forms.ToolStripButton ExitTSB;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem administratorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeAccountsTS;
     }
 }
 

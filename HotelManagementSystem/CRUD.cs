@@ -81,12 +81,19 @@ namespace WindowsFormsApplication1
         }
         public void deleteRecord(String connection, String query, String message)
         {
-            MySqlConnection sqlconn = new MySqlConnection(connection);
-            sqlconn.Open();
-            MySqlCommand sqlCommand = new MySqlCommand(query, sqlconn);
-            sqlCommand.ExecuteNonQuery();
-            MessageBox.Show("Account Deleted!");
-            sqlconn.Close();
+            try
+            {
+                MySqlConnection sqlconn = new MySqlConnection(connection);
+                sqlconn.Open();
+                MySqlCommand sqlCommand = new MySqlCommand(query, sqlconn);
+                sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Account Deleted!");
+                sqlconn.Close();
+            }
+            catch (System.Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }
